@@ -1,0 +1,30 @@
+#Stuff from the C++ example on GitHub
+
+#Prerequisites
+*.d
+
+#Compiled Object Files. Assuming this is what g++ -o outputs
+*.slo
+*.lo
+*.o
+*.obj
+
+#Precompiled Headers
+*.gch
+*.pch
+
+#Compiled Dynamic Libraries
+*.so
+*.dylib
+*.dll
+
+#Compiled Static Libraries
+*.lai
+*.la
+*.a
+*.lib
+
+#Executables
+*.exe
+*.out
+*.app
