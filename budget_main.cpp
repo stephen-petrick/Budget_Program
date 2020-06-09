@@ -1,17 +1,14 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 //#include <cstdio> //maybe not necessary, seems to be equivalent to stdio.h in c which is the same as iostream
 using namespace std;
 
 
 void writeToFile (int day, int month, int year);
+void readFromFile (string fileName);
 
 int main() {
-	cout << "Hello world" << endl;
-	cout << "Type in a number: ";
-	int x=0;
-	cin >> x;
-	cout << "This is the number stored in variable x: " << x << endl;
 
 //	int date [8]; //not sure if possible to do with array
 	int day = 0, month = 0, year = 0;
@@ -25,7 +22,10 @@ int main() {
 	cout << "Running 'writeToFile' function...'" << endl;
 	writeToFile(day,month,year);
 	cout << "Success." << endl;
-	return 0;
+   cout << "Running 'readFromFile' funciton ...'" <<endl;
+   readFromFile("test_file.csv");
+	cout << "Success." << endl;
+   return 0;
 }
 
 void writeToFile (int day, int month, int year) {
@@ -34,5 +34,18 @@ void writeToFile (int day, int month, int year) {
 	write.open("test_file.csv");
 	write << day << "," << month << "," << year << endl; //not sure if endl suppose to be there
 	write.close();
+
+}
+
+void readFromFile (string fileName){
+
+   string buffer;
+   ifstream read;
+   read.open(fileName);
+   read >> buffer;
+   cout << "Data in file " << fileName << ":" << endl;
+   cout << buffer;
+   cout << "\nFinished." << endl;
+   read.close();
 
 }

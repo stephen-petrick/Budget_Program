@@ -32,3 +32,4 @@
 #Personal Add ons
 *.csv #considering using csv as storage files
 *.txt #maybe text instead
+Budgeting #executable, seems doesn't match the previous file extensions so specifically labelling it
