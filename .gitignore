@@ -28,3 +28,7 @@
 *.exe
 *.out
 *.app
+
+#Personal Add ons
+*.csv #considering using csv as storage files
+*.txt #maybe text instead
