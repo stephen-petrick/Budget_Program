@@ -5,22 +5,25 @@
 using namespace std;
 
 
-void writeToFile (int day, int month, int year);
+void writeToFile (string money, int day, int month, int year);
 void readFromFile (string fileName);
 
 int main() {
 
 //	int date [8]; //not sure if possible to do with array
 	int day = 0, month = 0, year = 0;
+   string money;
 //	cout << " Day, month, year initial: " << day << month << year << endl; check for initialization
-	cout << "Enter day: ";
+   cout << "Enter amount: ";
+   cin >> money:;
+   cout << "Enter day: ";
 	cin >> day;
 	cout << "Enter month: ";
 	cin >> month;
 	cout << "Enter year: ";
 	cin >> year;
 	cout << "Running 'writeToFile' function...'" << endl;
-	writeToFile(day,month,year);
+	writeToFile(money,day,month,year);
 	cout << "Success." << endl;
    cout << "Running 'readFromFile' funciton ...'" <<endl;
    readFromFile("test_file.csv");
@@ -28,11 +31,18 @@ int main() {
    return 0;
 }
 
-void writeToFile (int day, int month, int year) {
+void writeToFile (string money, int day, int month, int year) {
+
+   string moneyBuffer = money;
+   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){
+      if (moneyBuffer.at(i) == ',')
+         moneyBuffer.at(i) = "'";
+   }
+   double moneyDouble = string.stod(
 
 	ofstream write;
 	write.open("test_file.csv");
-	write << day << "," << month << "," << year << endl; //not sure if endl suppose to be there
+	write << money << "," << day << "," << month << "," << year << endl; 
 	write.close();
 
 }
