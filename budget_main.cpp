@@ -34,6 +34,7 @@ int main() {
 void writeToFile (string money, int day, int month, int year) {
 
    string moneyBuffer = money;
+   string moneyBuffer2 = money;
    //for some reason won't work using an iterator
 /*   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){ 
       if (moneyBuffer[*i] == ','){
@@ -51,6 +52,13 @@ void writeToFile (string money, int day, int month, int year) {
    }
 
    cout << "Parsed moneyBuffer: " << moneyBuffer << endl;
+   for (int i=0; i<moneyBuffer2.length();  i++){ 
+         if (moneyBuffer2[i] == ','){
+            moneyBuffer2.erase(i);
+            cout << "Removed comma" << endl;
+         }
+   }
+   cout << "moneyBuffer2: " << moneyBuffer2 << endl;
    double moneyDouble = stod(money);
    cout << "moneyDouble: " << moneyDouble << endl;
 
