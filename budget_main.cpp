@@ -15,7 +15,7 @@ int main() {
    string money;
 //	cout << " Day, month, year initial: " << day << month << year << endl; check for initialization
    cout << "Enter amount: ";
-   cin >> money:;
+   cin >> money;
    cout << "Enter day: ";
 	cin >> day;
 	cout << "Enter month: ";
@@ -34,15 +34,29 @@ int main() {
 void writeToFile (string money, int day, int month, int year) {
 
    string moneyBuffer = money;
-   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){
-      if (moneyBuffer.at(i) == ',')
-         moneyBuffer.at(i) = "'";
+   //for some reason won't work using an iterator
+/*   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){ 
+      if (moneyBuffer[*i] == ','){
+         moneyBuffer[*i] = '*';
+         cout << "Replaced comma" << endl;
+      }
    }
-   double moneyDouble = string.stod(
+*/
+   //change commas from input to astrisk to prevent parsing conflict in CSV file
+   for (int i=0; i<moneyBuffer.length();  i++){ 
+         if (moneyBuffer[i] == ','){
+            moneyBuffer[i] = '*';
+            cout << "Replaced comma" << endl;
+         }
+   }
+
+   cout << "Parsed moneyBuffer: " << moneyBuffer << endl;
+   double moneyDouble = stod(money);
+   cout << "moneyDouble: " << moneyDouble << endl;
 
 	ofstream write;
 	write.open("test_file.csv");
-	write << money << "," << day << "," << month << "," << year << endl; 
+	write << moneyBuffer << "," << day << "," << month << "," << year << endl; 
 	write.close();
 
 }
