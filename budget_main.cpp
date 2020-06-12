@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 //#include <cstdio> //maybe not necessary, seems to be equivalent to stdio.h in c which is the same as iostream
-//using namespace std; //according to a stack overflow post, using this is bad practice since it can cause conflicts with functions of the same name
+using namespace std; //according to a stack overflow post, using this is bad practice since it can cause conflicts with functions of the same name
+                     // need to do std::string and etc if not using tho. will keep it for time being for convenience
 
 
 void writeToFile (string money, int day, int month, int year);
@@ -61,7 +62,8 @@ void writeToFile (string money, int day, int month, int year) {
          }
    }
    cout << "moneyBuffer2: " << moneyBuffer2 << endl;
-   double moneyDouble = stod(moneyBuffer2);
+   size_t idx=0;
+   double moneyDouble = stod(moneyBuffer2, &idx);
    cout << "moneyDouble: " << moneyDouble << endl;
 
 	ofstream write;
