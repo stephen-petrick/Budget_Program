@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 //#include <cstdio> //maybe not necessary, seems to be equivalent to stdio.h in c which is the same as iostream
-using namespace std;
+//using namespace std; //according to a stack overflow post, using this is bad practice since it can cause conflicts with functions of the same name
 
 
 void writeToFile (string money, int day, int month, int year);
@@ -16,12 +16,12 @@ int main() {
 //	cout << " Day, month, year initial: " << day << month << year << endl; check for initialization
    cout << "Enter amount: ";
    cin >> money;
-   cout << "Enter day: ";
-	cin >> day;
-	cout << "Enter month: ";
-	cin >> month;
-	cout << "Enter year: ";
-	cin >> year;
+//   cout << "Enter day: ";
+//  	cin >> day;
+//  	cout << "Enter month: ";
+//  	cin >> month;
+//  	cout << "Enter year: ";
+//  	cin >> year;
 	cout << "Running 'writeToFile' function...'" << endl;
 	writeToFile(money,day,month,year);
 	cout << "Success." << endl;
@@ -52,14 +52,16 @@ void writeToFile (string money, int day, int month, int year) {
    }
 
    cout << "Parsed moneyBuffer: " << moneyBuffer << endl;
+
+   cout << "moneyBuffer2 vanilla: " << moneyBuffer2 << endl;
    for (int i=0; i<moneyBuffer2.length();  i++){ 
          if (moneyBuffer2[i] == ','){
-            moneyBuffer2.erase(i);
-            cout << "Removed comma" << endl;
+            cout << "Value to remove:" << moneyBuffer2[i] << " Removed comma" << endl;
+            moneyBuffer2.erase(moneyBuffer2.begin()+i);
          }
    }
    cout << "moneyBuffer2: " << moneyBuffer2 << endl;
-   double moneyDouble = stod(money);
+   double moneyDouble = stod(moneyBuffer2);
    cout << "moneyDouble: " << moneyDouble << endl;
 
 	ofstream write;
