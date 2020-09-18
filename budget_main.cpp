@@ -9,6 +9,7 @@ using namespace std; //according to a stack overflow post, using this is bad pra
 //void writeToFile (string money, int day, int month, int year);
 //void readFromFile (string fileName);
 
+//another line to test commit command
 
 void writeToFile (string money, int day, int month, int year) {
 
