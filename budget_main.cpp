@@ -10,7 +10,6 @@ using namespace std; //according to a stack overflow post, using this is bad pra
 //void readFromFile (string fileName);
 
 
-
 void writeToFile (string money, int day, int month, int year) {
 
    string moneyBuffer = money;
