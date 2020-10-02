@@ -2,7 +2,10 @@
 #include <string>
 #include <fstream>
 
-string moneyBuffer = money;
+
+void writeToFile (string money, int day, int month, int year) {
+
+   string moneyBuffer = money;
    string moneyBufferPureNumber = money;
    //for some reason won't work using an iterator
 /*   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){ 
@@ -73,4 +76,5 @@ void readFromFile (string fileName){
    read.close();
    cout << "\nFinished." << endl;
 }
+
 
