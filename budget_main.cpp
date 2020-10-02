@@ -109,7 +109,7 @@ int main() {
 	cout << "Success." << endl;
    return 0;
 }
-/*
+/* //Put the functions at top so didn't have to create prototypes. May change back if the first way feels better/cleaner
 void writeToFile (string money, int day, int month, int year) {
 
    string moneyBuffer = money;
