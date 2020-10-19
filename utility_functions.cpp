@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+using namespace std;
 
 
 void writeToFile (string money, int day, int month, int year) {

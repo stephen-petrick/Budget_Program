@@ -7,7 +7,7 @@ using namespace std;
 class Days {
    
    public:
-      int getGrandTotal ( void )
+      int getGrandTotal (void);
 
       Days(); //constructor
 
@@ -18,7 +18,7 @@ class Days {
 
 //Constructor function
 Days::Days (void){
-   cout << "Creating 'Days' object." << end;
+   cout << "Creating 'Days' object." << endl;
    //initialize variables
    grandTotal = 0;
 
@@ -27,6 +27,7 @@ Days::Days (void){
 int Days::getGrandTotal ( void ) {
    
    vector<double> daysTotal;
+   return 1;
 
 }
 
