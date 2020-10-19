@@ -4,12 +4,12 @@
 class Days {
    
    public:
-      int getGrandTotal ( void )
-
+      int getGrandTotal (void);
+      void listDaysPurchases (void); 
       Days(); //constructor
 
    private:
       int grandTotal;
       vector<purchases> DaysPurchases;
-}
+};
 #endif

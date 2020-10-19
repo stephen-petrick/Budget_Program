@@ -29,3 +29,9 @@ int Days::getGrandTotal ( void ) {
    vector<double> daysTotal;
 
 }
+
+void listDaysPurchases (void){
+
+   cout<<"listDaysPurchases"<<endl;
+
+}
