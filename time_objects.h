@@ -10,6 +10,6 @@ class Days {
 
    private:
       int grandTotal;
-
+      vector<purchases> DaysPurchases;
 }
 #endif
