@@ -94,6 +94,8 @@ int main() {
 //	int date [8]; //not sure if possible to do with array
 	int day = 0, month = 0, year = 0;
    string money;
+   string fileName = "test_file.csv";
+   string reason = "TestReason";
 //	cout << " Day, month, year initial: " << day << month << year << endl; check for initialization
    cout << "Enter amount: ";
    cin >> money;
@@ -104,10 +106,10 @@ int main() {
 //  	cout << "Enter year: ";
 //  	cin >> year;
 	cout << "Running 'writeToFile' function...'" << endl;
-	writeToFile(money,day,month,year);
+	writeToFile(money,reason,fileName,day,month,year);
 	cout << "Success." << endl;
    cout << "Running 'readFromFile' funciton ...'" <<endl;
-   readFromFile("test_file.csv");
+   printFromFile(fileName);
 	cout << "Success." << endl;
    return 0;
 }

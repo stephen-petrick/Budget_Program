@@ -5,10 +5,11 @@
 using namespace std;
 
 
-void writeToFile (string money, int day, int month, int year) {
+void writeToFile (string money, string reason, string fileWritingTo, int day, int month, int year) {
 
    string moneyBuffer = money;
    string moneyBufferPureNumber = money;
+   string reasonBuffer = reason;
    //for some reason won't work using an iterator
 /*   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){ 
       if (moneyBuffer[*i] == ','){
@@ -30,7 +31,7 @@ void writeToFile (string money, int day, int month, int year) {
    cout << "moneyBufferPureNumber vanilla: " << moneyBufferPureNumber << endl;
    for (int i=0; i<moneyBufferPureNumber.length();  i++){ 
          if (moneyBufferPureNumber[i] == ','){
-            cout << "Value to remove:" << moneyBufferPureNumber[i] << " Removed comma" << endl;
+            cout << "Value to remove: " << moneyBufferPureNumber[i] << " Removed comma" << endl;
             moneyBufferPureNumber.erase(moneyBufferPureNumber.begin()+i);
          }
    }
@@ -49,17 +50,17 @@ void writeToFile (string money, int day, int month, int year) {
 //Append new entry to file. I don't really know how it works though. Like why is the ifstream needed?
    ofstream fout;
    ifstream fin;
-   fin.open("test_file.csv");
-   fout.open("test_file.csv", ios::app);
+   fin.open(fileWritingTo);
+   fout.open(fileWritingTo, ios::app);
    if (fin.is_open()) {
-      fout << moneyBuffer << "," << moneyBufferPureNumber << "," << day << "," << month << "," << year << endl; 
+      fout << moneyBuffer << "," << moneyBufferPureNumber << "," << day << "," << month << "," << year << "," << reasonBuffer << endl;//appending the reason string at the end w/o parsing commas out, since it *shouldn't* cause trouble being at the end 
    }
    fin.close();
    fout.close();
 
 }
 
-void readFromFile (string fileName){
+void printFromFile (string fileName){
 
    string buffer;
    cout << "Data in file " << fileName << ":" << endl;
