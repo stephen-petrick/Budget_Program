@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void writeToFile (string money, string reason, string fileWritingTo, int day, int month, int year) {
+void writeToFile (string money, string reason, string fileName, int day, int month, int year) {
 
    string moneyBuffer = money;
    string moneyBufferPureNumber = money;
