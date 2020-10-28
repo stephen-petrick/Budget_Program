@@ -4,17 +4,17 @@
 
 using namespace std;
 
-class Days {
-   
-   public:
-      int getGrandTotal (void);
-
-      Days(); //constructor
-
-   private:
-      int grandTotal;
-
-};
+//class Days {
+//   
+//   public:
+//      int getGrandTotal (void);
+//
+//      Days(); //constructor
+//
+//   private:
+//      int grandTotal;
+//
+//};
 
 //Constructor function
 Days::Days (void){
