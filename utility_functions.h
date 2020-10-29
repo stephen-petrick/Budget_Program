@@ -12,7 +12,7 @@ struct purchases{
 };
 
 
-void writeToFile (string money, string reason, int day, int month, int year);
+void writeToFile (string money, string reason, string fileName, int day, int month, int year);
 void printFromFile (string fileName);
 
 #endif

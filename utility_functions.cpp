@@ -10,6 +10,7 @@ void writeToFile (string money, string reason, string fileName, int day, int mon
    string moneyBuffer = money;
    string moneyBufferPureNumber = money;
    string reasonBuffer = reason;
+   string fileWritingTo = fileName;
    //for some reason won't work using an iterator
 /*   for (auto i=begin(moneyBuffer); i!=end(moneyBuffer); i++){ 
       if (moneyBuffer[*i] == ','){
@@ -39,7 +40,8 @@ void writeToFile (string money, string reason, string fileName, int day, int mon
    size_t idx=0;
    double moneyDouble = stod(moneyBufferPureNumber, &idx);
    cout << "moneyDouble: " << moneyDouble << endl;
-
+   
+   cout << "Appending reason: " << reasonBuffer << " to file." << endl;
 //Writing only line and writing over it. Potentially useful for debugging so DON'T DELETE
 	//ofstream write;
 	//write.open("test_file.csv");
