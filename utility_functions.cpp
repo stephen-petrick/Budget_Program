@@ -28,20 +28,21 @@ void writeToFile (string money, string reason, string fileName, int day, int mon
    }
 
    cout << "Parsed moneyBuffer: " << moneyBuffer << endl;
-
-   cout << "moneyBufferPureNumber vanilla: " << moneyBufferPureNumber << endl;
+   
+   //Loop to convert the string of numbers in a double 
+   cout << "moneyBufferPureNumber vanilla: " << moneyBufferPureNumber << endl; //print original string of number
    for (int i=0; i<moneyBufferPureNumber.length();  i++){ 
-         if (moneyBufferPureNumber[i] == ','){
-            cout << "Value to remove: " << moneyBufferPureNumber[i] << " Removed comma" << endl;
-            moneyBufferPureNumber.erase(moneyBufferPureNumber.begin()+i);
+         if (moneyBufferPureNumber[i] == ','){  //removing comma so only digits remain
+            cout << "Value to remove: " << moneyBufferPureNumber[i] << " Removed comma" << endl; //print value before removal to double check
+            moneyBufferPureNumber.erase(moneyBufferPureNumber.begin()+i); //remove comma
          }
    }
-   cout << "moneyBufferPureNumber: " << moneyBufferPureNumber << endl;
-   size_t idx=0;
-   double moneyDouble = stod(moneyBufferPureNumber, &idx);
-   cout << "moneyDouble: " << moneyDouble << endl;
+   cout << "moneyBufferPureNumber: " << moneyBufferPureNumber << endl; //print to see if all commas are removed. still a string at this poing, need to convert to double now
+   size_t idx=0; //some pointer for conversion function to work
+   double moneyDouble = stod(moneyBufferPureNumber, &idx); //convert string to double
+   cout << "moneyDouble: " << moneyDouble << endl; //print double. should look the same as output from string two lines above
    
-   cout << "Appending reason: " << reasonBuffer << " to file." << endl;
+   cout << "Appending reason: " << reasonBuffer << " to file." << endl; //append reason string 
 //Writing only line and writing over it. Potentially useful for debugging so DON'T DELETE
 	//ofstream write;
 	//write.open("test_file.csv");
