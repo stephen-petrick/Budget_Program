@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include "utility_functions.h" //apparently good practice to include headers in corresponding source file to catch possible mismatching file declarations
+#include <stdexcept> // std::runtime_error
+#include <sstream> // std::stringstream
 using namespace std;
 
 
@@ -82,5 +84,42 @@ void printFromFile (string fileName){
    read.close();
    cout << "\nFinished." << endl;
 }
+
+vector<purchases> readFromFile (string fileName){
+
+   vector<purchases> results;  
+   ifstream myFile(fileName); //I think this also opens the file
+
+   //Check if file is open
+   if (!myFile.is_open()) throw runtime_error("Could not open file"); //not quite sure what this is other than error catcher. need to read about runtime_error later
+   
+   //helper variables
+   string temp, currentLine, currentWord;
+   vector<string> placeholder; //vector to hold file contents, then convert to purchase vector
+   int rowIndex = 0;
+   
+   //loop to get file contents into a temporary string vector. will later convert to a purchase vector
+   while (myFile >> temp){
+
+      stringstream ss(currentLine); //creates stringstream of current line
+
+      //reads current row, using comma as delimiter, and storing it into currentWord
+      while (getline(ss, currentWord, ',')){
+
+         placeholder.push_back(currentWord); //store entire row into placeholder
+
+     }
+  }
+
+  cout << placeholder;
+
+  return results;
+
+}
+
+
+
+
+
 
 

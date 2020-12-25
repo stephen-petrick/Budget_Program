@@ -34,5 +34,10 @@ int main() {
    cout << "Running 'readFromFile' funciton ...'" <<endl;
    printFromFile(fileName);
 	cout << "Success." << endl;
+
+   cout << "Running 'readFromFile' function ... '" << endl;
+   vector<purchase>placeholder = readFromFile(fileName);
+   cout << "Success." << endl;
+
    return 0;
 }
